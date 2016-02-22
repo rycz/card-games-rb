@@ -14,10 +14,9 @@ helpers do
     end
     
     def deal_cards
-        session[:player2].take session[:deck].draw
         while session[:deck].not_empty
             session[:player1].take session[:deck].draw
-            
+            session[:player2].take session[:deck].draw
         end
     end
     
