@@ -19,12 +19,13 @@ class Card
         end
     end
     
+    
 end
 
 
 # this class is for a deck of 52 cards
 class Deck
-   
+    
    def initialize
        @cards = []
        suits = %w[ Hearts Diamonds Clubs Spades ]
@@ -48,10 +49,14 @@ class Deck
        !@cards.empty?
    end
    
+   def is_empty
+       @cards.empty?
+   end
+   
    def deck_size
        @cards.size
    end
-    
+   
 end
 
 
@@ -75,6 +80,40 @@ class Stack < Deck
     # this shows the card that most recently added to the stack
     def current_card
         @cards[-1]
+    end
+    
+end
+
+
+class Player
+    
+    def initialize(name)
+        @name = name
+        @stack = Stack.new
+    end
+    
+    def name
+        @name
+    end
+    
+    def play_card
+        @stack.play_card
+    end
+    
+    def take new_card
+        @stack.take new_card
+    end
+    
+    def current_card
+        @stack.current_card
+    end
+    
+    def num_of_cards_left
+        @stack.deck_size
+    end
+    
+    def loses
+        @stack.is_empty
     end
     
 end
