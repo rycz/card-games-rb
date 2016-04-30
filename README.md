@@ -1,4 +1,4 @@
-Card games programmed in Ruby
+Card games programmed in Ruby and JavaScript.
 
 I used the Card and Deck classes from the SitePoint Ruby 2.0 course's Play Your Cards Right game to program other card games.
 
